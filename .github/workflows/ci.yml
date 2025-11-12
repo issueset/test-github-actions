@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Build
-        run: pnpm run build
-
       - name: if not fork
         if: ${{ !github.event.repository.fork }}
         run: echo 1
