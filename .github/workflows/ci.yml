@@ -25,3 +25,7 @@ jobs:
       - name: if repository is issueset/test-github-actions
         if: github.repository == 'issueset/test-github-actions'
         run: echo 3
+
+      - name: if same repo
+        if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+        run: echo 4
